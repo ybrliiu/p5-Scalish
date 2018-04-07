@@ -9,7 +9,8 @@ use Scalish::Either::Right;
 use Scalish::Either::Left;
 
 use Exporter qw( import );
-our @EXPORT_OK = qw( option some none right left for_each for_yield );
+our @EXPORT_OK   = qw( option some none right left for_each for_yield );
+our %EXPORT_TAGS = ( all => \@EXPORT_OK );
 
 sub option($) {
     defined $_[0] ? Scalish::Option::Some->new( $_[0] ) : Scalish::Option::None->new;

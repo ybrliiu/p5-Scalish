@@ -39,9 +39,9 @@ sub fold {
 # override
 sub flatten {
     my $self = shift;
-    $self->{content}->isa('Option::Option')
+    $self->{content}->isa('Scalish::Option::Option')
       ? $self->{content}
-      : Carp::croak '$self->{content} is not Option::Option type';
+      : Carp::croak '$self->{content} is not Scalish::Option::Option type';
 }
 
 # override
@@ -86,7 +86,7 @@ sub to_left {
 # override
 sub to_list {
     my $self = shift;
-    if ( $self->{content}->isa('Option::Option') ) {
+    if ( $self->{content}->isa('Scalish::Option::Option') ) {
         ( $self->{content}, $self->{content}->to_list );
     }
     else {

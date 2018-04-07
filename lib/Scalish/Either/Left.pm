@@ -37,7 +37,7 @@ sub join_right {
 
 sub swap {
     my $self = shift;
-    Either::Right->new( $self->{content} );
+    Scalish::Either::Right->new( $self->{content} );
 }
 
 sub match {
