@@ -47,7 +47,7 @@ sub merge {
     $self->{content};
 }
 
-sub match;
+sub match {}
 
 sub right {
     my $self = shift;

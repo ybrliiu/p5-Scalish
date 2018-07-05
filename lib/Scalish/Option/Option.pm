@@ -2,11 +2,11 @@ package Scalish::Option::Option;
 
 use Scalish::Exporter;
 
-sub new;
+sub new {}
 
-sub exists;
+sub exists {}
 
-sub fold;
+sub fold {}
 
 sub foreach {
     my ( $self, $code ) = @_;
@@ -15,7 +15,7 @@ sub foreach {
     ();
 }
 
-sub flatten;
+sub flatten {}
 
 sub flat_map {
     my ( $self, $code ) = @_;
@@ -23,25 +23,25 @@ sub flat_map {
     $self->map($code)->flatten;
 }
 
-sub get;
+sub get {}
 
-sub get_or_else;
+sub get_or_else {}
 
-sub is_defined;
+sub is_defined {}
 
 sub is_empty { !shift->is_defined }
 
-sub map;
+sub map {}
 
-sub match;
+sub match {}
 
-sub to_left;
+sub to_left {}
 
-sub to_list;
+sub to_list {}
 
-sub to_right;
+sub to_right {}
 
-sub yield;
+sub yield {}
 
 1;
 
