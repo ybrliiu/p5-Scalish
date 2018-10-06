@@ -119,7 +119,7 @@ subtest 'flat_map' => sub {
   my $r = right(1);
   dies_ok { $r->flat_map(sub { $r * 2 }) };
   my $l = left(0);
-  is $l->flat_map(sub { $l + 10 }), $l;
+  is $l->flat_map(sub { $l + 10 })->left->get, $l->left->get;
   my $rr = right($r);
   $rr->flat_map(sub {
     my $c = shift;
@@ -175,7 +175,7 @@ subtest 'map' => sub {
   my $r2 = $r->map(sub { $_ * 6 });
   $r2->map(sub { is $_, 15 });
   my $l = left(9);
-  is $l->map(sub { $_ ** $_ }), $l;
+  is $l->map(sub { $_ ** $_ })->left->get, $l->left->get;
 };
 
 subtest 'to_option' => sub {
