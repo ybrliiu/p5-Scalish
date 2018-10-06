@@ -64,7 +64,7 @@ sub map {
         Scalish::Either::Right->new($ret);
     }
     else {
-        $self;
+        Scalish::Either::Left->new( $self->_content );
     }
 }
 
