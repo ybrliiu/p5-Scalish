@@ -18,7 +18,7 @@ sub option($) {
 
 sub some($) { Scalish::Option::Some->new( $_[0] ) }
 
-sub none { Scalish::Option::None->new() }
+sub none() { Scalish::Option::None->new() }
 
 sub right($) { Scalish::Either::Right->new( $_[0] ) }
 
