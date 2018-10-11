@@ -7,9 +7,21 @@ use Scalish::Option::Some;
 use Scalish::Option::None;
 use Scalish::Either::Right;
 use Scalish::Either::Left;
+use Scalish::Validation::Success;
+use Scalish::Validation::Failure;
 
 use Exporter qw( import );
-our @EXPORT_OK   = qw( option some none right left for_each for_yield );
+our @EXPORT_OK = qw(
+  option
+  some
+  none
+  right
+  left
+  success
+  failure
+  for_each
+  for_yield
+);
 our %EXPORT_TAGS = ( all => \@EXPORT_OK );
 
 sub option($) {
@@ -23,6 +35,10 @@ sub none() { Scalish::Option::None->new() }
 sub right($) { Scalish::Either::Right->new( $_[0] ) }
 
 sub left($) { Scalish::Either::Left->new( $_[0] ) }
+
+sub success($) { Scalish::Validation::Success->new( $_[0] ) }
+
+sub failure($) { Scalish::Validation::Failure->new( $_[0] ) }
 
 sub _rec_for_each {
     my ( $iters, $index, $params, $code ) = @_;
