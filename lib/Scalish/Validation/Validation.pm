@@ -65,3 +65,5 @@ Scalaz.Validation の実装
   - そもそも flatten なんてメソッドはない
 - NonEmptyList は使いません, 代わりにArrayRefを使います
 
+validationとは、失敗しても処理を続行するeither
+

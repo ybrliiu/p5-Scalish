@@ -13,6 +13,8 @@ use_ok $_ for qw(
     Scalish::Either::RightProjection
     Scalish::Either::Left
     Scalish::Either::Right
+    Scalish::Validation::Success
+    Scalish::Validation::Failure
     Scalish
 );
 
